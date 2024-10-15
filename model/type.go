@@ -6,23 +6,22 @@ import (
 )
 
 type User struct {
-	ID         	primitive.ObjectID 	`bson:"_id,omitempty" json:"_id,omitempty" example:"123456789"`
-	Username   	string             	`bson:"username,omitempty" json:"username,omitempty" example:"user"`
-	Password   	string             	`bson:"password,omitempty" json:"password,omitempty" example:"user"`
-	IDrole		primitive.ObjectID	`bson:"idrole,omitempty" json:"idrole,omitempty" example:"123456789"`
-	Email      	string             	`bson:"email,omitempty" json:"email,omitempty" example:"user"`
+	IdUser      primitive.ObjectID 	`bson:"id_user,omitempty" json:"id_user,omitempty" example:"123456789"`
+	Username   	string             	`bson:"username,omitempty" json:"username,omitempty" example:"username"`
+	Password   	string             	`bson:"password,omitempty" json:"password,omitempty" example:"password"`
+	IdRole		primitive.ObjectID	`bson:"id_role,omitempty" json:"id_role,omitempty" example:"123456789"`
+	Email      	string             	`bson:"email,omitempty" json:"email,omitempty" example:"user@mail.com"`
 	Phone      	string             	`bson:"phone,omitempty" json:"phone,omitempty" example:"08123456789"`
 	Address    	string             	`bson:"address,omitempty" json:"address,omitempty" example:"Jl. Jalan"`
 }
 
-
 type Roles struct {
-	IDrole				primitive.ObjectID  `bson:"_id,omitempty" json:"_id,omitempty" example:"123456789"`
-	Role				string				`bson:"role,omitempty" json:"role,omitempty" example:"admin"`
+	IdRole				primitive.ObjectID  `bson:"id_role,omitempty" json:"id_role,omitempty" example:"123456789"`
+	RoleName			string				`bson:"role_name,omitempty" json:"role_name,omitempty" example:"pembeli"`
 }
 
 type JWTClaims struct {
 	jwt.StandardClaims
-	UserID			primitive.ObjectID `json:"user_id"`
-	RoleID			primitive.ObjectID `json:"role_id"`
+	IdUser		primitive.ObjectID `json:"id_user"`
+	IdRole		primitive.ObjectID `json:"id_role"`
 }

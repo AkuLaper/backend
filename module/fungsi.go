@@ -2,13 +2,8 @@ package module
 
 import (
 	"context"
-	"error"
 	"fmt"
 
-	"github.com/AkuLaper/backend/model"
-
-	// "go.mongodb.org/mongo-driver/bson"
-	// "go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -28,3 +23,4 @@ func InsertOneDoc(db string, collection string, doc interface{}) (insertedID int
 	}
 	return insertResult.InsertedID
 }
+
